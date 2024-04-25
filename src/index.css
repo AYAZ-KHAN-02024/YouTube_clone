@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For WebKit (Chrome, Safari, etc.) */
+*::-webkit-scrollbar {
+  width: 2px;
+  /* Set width(y) of the scrollbar */
+  height: 2px;
+  /* Set height(x) of the scrollbar */
+}
+
+
+*::-webkit-scrollbar-track {
+  background: #181616;
+  /* Set color for the track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8f0388;
+  /* Set color for the thumb */
+  border-radius: 5px;
+  /* Set border radius for the thumb */
+  width: 2px;
+  height: 2px;
+}
+
+/* Optional: Hover effects */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0f1010;
+  /* Set color for the thumb on hover */
+}
+
+@media (max-width:640px) {
+  *::-webkit-scrollbar {
+    width: 0px;
+    /* Set width(y) of the scrollbar */
+    height: 1px;
+    /* Set height(x) of the scrollbar */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+
+}
+
+button:active,
+i:active {
+  scale: .9;
+}
+
+input:focus {
+  outline: none;
+}
+
+.active {
+  color: rgb(49, 0, 40);
+  border: 1px solid rgb(45, 42, 42);
+  border-radius: 15px;
+  text-shadow: 4px 5px 10px rgb(55, 77, 139);
+  padding: 8px;
+  transition-duration: 200ms;
+}
+
+
+body {
+  background-color: rgb(197, 227, 254);
+  overscroll-behavior: none;
+  overflow: scroll;
+}
+
+
+/* this is for loading circle  */
+.load {
+  min-width: 30vw;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* this is for loading circle  */
+.loading {
+  animation: loading .5s ease-in infinite;
+  font-size: xx-large;
+}
+
+@keyframes loading {
+  10% {
+    transform: rotate(10deg);
+  }
+
+  30% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(50deg);
+  }
+
+  70% {
+    transform: rotate(70deg);
+  }
+
+  100% {
+    transform: rotate(3600deg);
+  }
+}
