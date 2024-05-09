@@ -13,7 +13,7 @@ function subsStorage(){
  else{
     return data
  }
-};
+}
 
 //this function for savedVideos
 function saveVidStorage(){
@@ -67,6 +67,7 @@ export const ContextProvider = ({ children }) => {
 
 
 
+    
     return (
     <MyContext.Provider 
     value={{subs,setSubs, category, setCategory, videos, search, setSearch, srhVideos,saveVideos,setSaveVideos}}>

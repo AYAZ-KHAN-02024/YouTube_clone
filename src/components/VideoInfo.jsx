@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import VideoCard from './VideoCard';
 import { FetchApi } from '../utils/Api';
@@ -6,6 +6,7 @@ import ReactPlayer from 'react-player'
 import SubscribeBtn from './SubscribeBtn';
 import VideoComment from './VideoComment';
 import SaveIcon from './SaveIcon';
+import LoadingBar from './LoadingBar';
 
 function VideoInfo() {
   const { id, channelId } = useParams();
@@ -16,14 +17,14 @@ function VideoInfo() {
   const [like, setLike] = useState(false);
   const [commentBtn, setCommentBtn] = useState(false);
 
-
+  
   useEffect(() => {
     window.scrollTo(0, 0);
 
     FetchApi(`videos?part=snippet,statistics&id=${id}`)
       .then((obj) => {
         //get first object from the array
-        setVideo(obj.data.items[0]);
+        setVideo(obj?.data?.items[0] ? obj?.data?.items[0] : 'data_not_found');
       })
       .catch((error) => console.log(error - 'something wrong in api'))
 
@@ -42,14 +43,32 @@ function VideoInfo() {
       .catch((error) => console.log(error - 'something wrong in api'))
 
 
-  }, [id])
+  }, [id,channelId]);
+
+  if(video=='data_not_found'){
+    return(
+      <div className='sm:text-xl  p-10 rounded-md mt-20 shadow-2xl shadow-black w-[80vw] h-full bg-indigo-500 text-slate-900 m-auto'>
+      👽Searched videos API is dead or goes under development, and As a FRONTEND DEVELOPER, I can't do any changes in database. so, please try after some time 🤗
+      <br /><br />
+      I am also frustrated with this rapid API key.its not work sometime.
+      <br /><br />
+      🤒एपीआई बुखार से पीड़ित है इसलिए इसका विकास चल रहा है।  उसके पूरी तरह स्वस्थ होने तक प्रतीक्षा करें
+      </div>
+    )
+  }
+
+  if(!video){
+    return(
+      <LoadingBar/>
+    )
+  }
 
 
   return (
     <div className='p-[1px] mt-14 w-screen' >
 
       {/* video info  */}
-      {video?.snippet &&
+      {(video?.snippet && video !=='data_not_found') &&
         <div className=" lg:w-[calc(100vw-340px)] w-screen flex flex-col items-center justify-center relative  lg:h-auto rounded-md mb-1 lg:border-r-[1px] lg:border-black">
 
           {/* video  player */}
@@ -96,7 +115,7 @@ function VideoInfo() {
                   }} title='I have not access of dataBase,so you can only click,like count will not change'
                 ></i>
                 <p className=' text-slate-900 text-xs  lg:text-sm'>
-                  {video.statistics.likeCount}
+                {parseInt(video?.statistics?.likeCount)}
                 </p>
               </div>
 

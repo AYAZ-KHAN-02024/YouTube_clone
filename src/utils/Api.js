@@ -6,7 +6,8 @@ const APIKeys = [
   import.meta.env.VITE_APP_YT_API_KEY2,
   import.meta.env.VITE_APP_YT_API_KEY3,
   import.meta.env.VITE_APP_YT_API_KEY4,
-  import.meta.env.VITE_APP_YT_API_KEY5
+  import.meta.env.VITE_APP_YT_API_KEY5,
+  import.meta.env.VITE_APP_YT_API_KEY6
 ];
 
 const options = (APIKey) => {

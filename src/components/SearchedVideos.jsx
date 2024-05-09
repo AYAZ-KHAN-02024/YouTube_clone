@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import { UseApi } from '../context/Context'
 import VideoCard from './VideoCard';
 
 function SearchedVideos() {
-
     const { srhVideos, search } = UseApi();
-    useEffect(()=>{window.scrollTo(0,0)
-        alert("😊Sometimes the API undergoes development or database issues, causing certain features like the video info page for searched videos to return no results. In such cases, please try refreshing the page 3-4 times or try after sometime.🙃")
-      },[]);
+    useEffect(()=>{window.scrollTo(0,0)},[]);
 
     return (
         <>
@@ -18,6 +15,8 @@ function SearchedVideos() {
                {srhVideos && <VideoCard allVideos={srhVideos} />} 
 
             </div>
+
+           
         </>
     )
 }

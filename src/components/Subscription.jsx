@@ -18,10 +18,10 @@ function Subscription() {
   useEffect(() => { window.scrollTo(0, 0) }, []);
 
   return (
-    <div className='p-[2px] mt-16 flex flex-row items-center justify-center h-auto  flex-wrap'>
+    <div className='p-[6px] mt-16 flex flex-row items-center justify-center h-auto  flex-wrap'>
       {subs && subs.map((val) => {
         return (
-          <div key={val?.id} className=' flex flex-col bg-indigo-300 shadow-md shadow-slate-400 rounded-md  items-center justify-center m-1 w-64 h-64'>
+          <div key={val?.id} className='p-1 box-content flex flex-col bg-indigo-300 shadow-md shadow-slate-400 rounded-md  items-center justify-center m-1 w-64 h-64'>
 
           <Link to={`/channel/${val.id}`} className=' flex flex-col items-center justify-center ' >
             <img src={val?.snippet?.thumbnails.medium.url} className=' rounded-full   w-24  sm:w-36 m-1 self-center' alt='logo not available' />
