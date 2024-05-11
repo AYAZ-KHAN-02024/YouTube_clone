@@ -48,11 +48,11 @@ function VideoInfo() {
   if(video=='data_not_found'){
     return(
       <div className='sm:text-xl  p-10 rounded-md mt-20 shadow-2xl shadow-black w-[80vw] h-full bg-indigo-500 text-slate-900 m-auto'>
-      👽Searched videos API is dead or goes under development, and As a FRONTEND DEVELOPER, I can't do any changes in database. so, please try after some time 🤗
+      👽Videos API is dead or goes under development, and As a FRONTEND DEVELOPER, I can't do any changes in database. so, please try another video 🤗
       <br /><br />
-      I am also frustrated with this rapid API key.its not work sometime.
+      I am also disappointed with this rapid API key.its not work sometime for some videos.
       <br /><br />
-      🤒एपीआई बुखार से पीड़ित है इसलिए इसका विकास चल रहा है।  उसके पूरी तरह स्वस्थ होने तक प्रतीक्षा करें
+      🤒एपीआई बुखार से पीड़ित है इसका विकास चल रहा है।  उसके पूरी तरह स्वस्थ होने तक प्रतीक्षा करें
       </div>
     )
   }
