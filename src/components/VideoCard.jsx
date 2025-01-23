@@ -6,7 +6,7 @@ import React from 'react';
 
 function VideoCard({ allVideos }) {
 
-  if (allVideos.length===0) {
+  if (allVideos && allVideos.length==0) {
     return(
       <>
         <LoadingBar/>
