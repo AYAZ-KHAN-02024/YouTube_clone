@@ -12,7 +12,7 @@ function Navbar() {
       <nav className="w-screen fixed top-0 z-50 mb-4">
         <header className="w-full h-14  p-2 md:p-2 bg-[#99c4ff] flex justify-between  items-center shadow-md shadow-[#617ad4]">
 
-          <img src="https://th.bing.com/th/id/OIG2.fDJL_ZE.DjNJgmXnZblx?pid=ImgGn" alt="logo" className="h-8 md:h-10 rounded-md" />
+          <img src="ytlogo.png" alt="logo" className="h-8 md:h-10 rounded-md" />
 
           <SearchFeed />
 
